@@ -1,0 +1,319 @@
+<!-- TxDataXML Version 2.0 -->
+<!-- Version: $Revision: #3 $.$Change: 93310 $  <BR> Last change at $DateTime: 2016/09/29 15:21:12 $ -->
+<!-- all rights reserved -->
+<!ENTITY % AddressType "(Street?, HouseNumber?, CountryCode, POBox?, COField?, ZipCode, District?, City, State?)">
+<!ENTITY % StatusType "(StatusCode, StatusText?)">
+<!ELEMENT Account (AccountHolder?, AccountNumber, NameOfBank?, BankCode, BankBranch?)>
+<!ELEMENT AccountHolder (#PCDATA)>
+<!ELEMENT AccountNumber (#PCDATA)>
+<!ELEMENT AdditionalCustomerData (NewCustomer?, DateOfRegistration?, IPAddress?, SocialSecurityNumber?, DrivingLicenseNumber?, DrivingLicenseState?)>
+<!ELEMENT AdditionalCustomerReference (#PCDATA)>
+<!ELEMENT Address %AddressType;>
+<!ELEMENT AddressAddition (#PCDATA)>
+<!ELEMENT AirlineData (TicketDocumentNumber, PassengerName, FlightDate, FlightCoupon+)>
+<!ELEMENT Amount (#PCDATA)>
+<!ATTLIST Amount
+	Currency CDATA #REQUIRED
+>
+<!ELEMENT AuthRequestMessage (#PCDATA)>
+<!ELEMENT AuthResponseMessage (#PCDATA)>
+<!ELEMENT AuthServerURL (#PCDATA)>
+<!ELEMENT AuthStatus (#PCDATA)>
+<!ELEMENT AuthText (#PCDATA)>
+<!ELEMENT AVIgnore EMPTY>
+<!ELEMENT AVS (AVSkip | AVIgnore | AVSRejectPolicy)?>
+<!ELEMENT AVSkip EMPTY>
+<!ELEMENT AVSRejectPolicy (#PCDATA)>
+<!ELEMENT AVSResult (#PCDATA)>
+<!ELEMENT Axles (#PCDATA)>
+<!ELEMENT Balance (#PCDATA)>
+<!ATTLIST Balance
+	Currency CDATA #REQUIRED
+>
+<!ELEMENT BankBranch (#PCDATA)>
+<!ELEMENT BankCode (#PCDATA)>
+<!ELEMENT BatchId (#PCDATA)>
+<!ELEMENT BIC (#PCDATA)>
+<!ELEMENT BookedRoute (#PCDATA)>
+<!ELEMENT Branch (#PCDATA)>
+<!ELEMENT Carrier (#PCDATA)>
+<!ELEMENT CheckBankResult (#PCDATA)>
+<!ELEMENT CheckBankResultText (#PCDATA)>
+<!ELEMENT CheckCreditCardResult (#PCDATA)>
+<!ELEMENT CheckCreditCardResultText (#PCDATA)>
+<!ELEMENT CheckOBT EMPTY>
+<!ELEMENT CheckOBTResult (CheckOBTResultCode, CheckOBTResultText?, PaymentMethod*)>
+<!ELEMENT CheckOBTResultCode (#PCDATA)>
+<!ELEMENT CheckOBTResultText (#PCDATA)>
+<!ELEMENT CheckResult (OutAddressOk, Protocol)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT ClaimSet (Transaction, DateOfInvoice, DueDate, VATAmount, VATPercentage, CostCenter?)>
+<!ELEMENT Client (ClientName, SalesChannel, Branch)>
+<!ELEMENT ClientName (#PCDATA)>
+<!ELEMENT ClientParameters (ClientParameter+)>
+<!ELEMENT ClientParameter (#PCDATA)>
+<!ATTLIST ClientParameter
+	Name CDATA #REQUIRED
+>
+<!ELEMENT AdditionalResponseData (DataField+)>
+<!ELEMENT DataField (#PCDATA)>
+<!ATTLIST DataField
+	Name CDATA #REQUIRED
+>
+<!ELEMENT COField (#PCDATA)>
+<!ELEMENT CollectNow (#PCDATA)>
+<!ELEMENT communicationId (#PCDATA)>
+<!ELEMENT CompanyOrPerson (#PCDATA)>
+<!ELEMENT ContactData (Phone?, WorkPhone?, Fax?, EMail?)>
+<!ELEMENT CostCenter (#PCDATA)>
+<!ELEMENT CountryCode (#PCDATA)>
+<!ELEMENT CreditCard (CreditCardNumber, CreditCardHolder?, CreditCardHolderAddress?, CreditCardStartDate?, CreditCardExpirationDate, CreditCardType?, CreditCardIssueNumber?, CVV?)>
+<!ELEMENT CreditCardAVMode (AVS?, FS?)>
+<!ELEMENT CreditCardAVResult (AVSResult?, FSResult?)>
+<!ELEMENT CreditCardExpirationDate (#PCDATA)>
+<!ELEMENT CreditCardHolder (#PCDATA)>
+<!ELEMENT CreditCardHolderAddress %AddressType;>
+<!ELEMENT CreditCardIssueNumber (#PCDATA)>
+<!ELEMENT CreditCardNumber (#PCDATA)>
+<!ELEMENT CreditCardStartDate (#PCDATA)>
+<!ELEMENT CreditCardType (#PCDATA)>
+<!ELEMENT CreditDelay (#PCDATA)>
+<!ELEMENT CustomerId (#PCDATA)>
+<!ELEMENT CustomerData (CustomerId, Person, Address, ContactData?, AdditionalCustomerData?)>
+<!ELEMENT CustomerReference (#PCDATA)>
+<!ELEMENT CVV (#PCDATA)>
+<!ELEMENT DateOfBirth (#PCDATA)>
+<!ELEMENT DateOfInvoice (#PCDATA)>
+<!ELEMENT DateOfRegistration (#PCDATA)>
+<!ELEMENT DebitDelay (#PCDATA)>
+<!ELEMENT DebitOrCredit (#PCDATA)>
+<!ELEMENT DebtorNotifyRequest (DebtorStatus+)>
+<!ELEMENT DebtorNotifyResponse EMPTY>
+<!ELEMENT DebtorSpecifiedStatusRequest (CustomerReference)>
+<!ELEMENT DebtorSpecifiedStatusResponse (DebtorStatus)>
+<!ELEMENT DebtorStatus (Client, CustomerId, CustomerReference, DebtorStatusResult, Balance, ReminderLevel, ReminderCause)>
+<!ELEMENT DebtorStatusRequest EMPTY>
+<!ELEMENT DebtorStatusResponse (DebtorStatus*)>
+<!ELEMENT DebtorStatusResult (#PCDATA)>
+<!ELEMENT DestinationAirportCityCode (#PCDATA)>
+<!ELEMENT District (#PCDATA)>
+<!ELEMENT DrivingLicenseNumber (#PCDATA)>
+<!ELEMENT DrivingLicenseState (#PCDATA)>
+<!ELEMENT DueDate (#PCDATA)>
+<!ELEMENT EMail (#PCDATA)>
+<!ELEMENT errorNotification (errorText?, errorNumber?)>
+<!ATTLIST errorNotification
+	type CDATA "unknown"
+	issuer CDATA #IMPLIED
+	service CDATA #IMPLIED
+>
+<!ELEMENT errorNumber (#PCDATA)>
+<!ELEMENT errorText (#PCDATA)>
+<!ELEMENT ErrorURL (#PCDATA)>
+<!ELEMENT FailURL (#PCDATA)>
+<!ELEMENT Fax (#PCDATA)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT FirstNameRanking (#PCDATA)>
+<!ELEMENT FirstSequenceType (#PCDATA)>
+<!ELEMENT FlightCoupon (OriginAirportCityCode, DestinationAirportCityCode, Carrier)>
+<!ELEMENT FlightDate (#PCDATA)>
+<!ELEMENT FS (AVIgnore | AVSkip | FSRejectPolicy)?>
+<!ELEMENT FSCode (#PCDATA)>
+<!ELEMENT FSRejectPolicy (#PCDATA)>
+<!ELEMENT FSResult (FSStatus, FSCode)>
+<!ELEMENT FSStatus (#PCDATA)>
+<!ELEMENT Gender (#PCDATA)>
+<!ELEMENT GuiPaymentId (#PCDATA)>
+<!ELEMENT header (communicationId, (Client | Server), retry?, inReplyTo?)>
+<!ELEMENT HouseNumber (#PCDATA)>
+<!ELEMENT IBAN (#PCDATA)>
+<!ELEMENT InAddressOk (#PCDATA)>
+<!ELEMENT inReplyTo (#PCDATA)>
+<!ELEMENT IPAddress (#PCDATA)>
+<!ELEMENT LanguageCode (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT LastNameRanking (#PCDATA)>
+<!ELEMENT LicensePlateNumber (#PCDATA)>
+<!ELEMENT Lock (#PCDATA)>
+<!ELEMENT MallURLSet (MerchantURL, SuccessURL, FailURL, ErrorURL)>
+<!ELEMENT MandateDateOfSignature (#PCDATA)>
+<!ELEMENT MandateIdentification (#PCDATA)>
+<!ELEMENT MatchStatus (#PCDATA)>
+<!ELEMENT MerchantURL (#PCDATA)>
+<!ELEMENT MiddleName (#PCDATA)>
+<!ELEMENT MultipayCheckBankRequest (( SEPAAccount | Account), CheckOBT?)>
+<!ELEMENT MultipayCheckBankResponse (CheckBankResult, CheckBankResultText, CheckOBTResult?)>
+<!ELEMENT MultipayCheckCreditCardRequest (CreditCard)>
+<!ELEMENT MultipayCheckCreditCardResponse (CheckCreditCardResult, CheckCreditCardResultText)>
+<!ELEMENT MultipayInitGuiPaymentRequest (Person, Address, ContactData?, InAddressOk, CustomerReference, CustomerId, Amount, NarrativeText?, LanguageCode?, OrderInformationText, MallURLSet, (PaymentConnection | PaymentMethod), RecurringPayment?, SEPACreditParameter?, ClientParameters?)>
+<!ELEMENT MultipayInitGuiPaymentResponse (Address, CheckResult?, RedirectURL, GuiPaymentId?, ((ScoreRating?, ScoreRanking?, FirstNameRanking?, LastNameRanking?))?, (CheckBankResult, CheckBankResultText, CheckOBTResult?)?)>
+<!ELEMENT MultipayInitPaymentRequest (Person, Address, ContactData?, AdditionalCustomerData?, ShippingData?, AirlineData?, PaymentConnection, CustomerReference, CustomerId, Amount, NarrativeText?, LanguageCode?, CreditCardAVMode?, S3DParameter?, RecurringPayment?, SEPADebitParameter?, SEPACreditParameter?, ClientParameters?)>
+<!ATTLIST MultipayInitPaymentRequest
+	Mode CDATA "0"
+>
+<!ELEMENT MultipayInitPaymentResponse (AuthStatus, AuthText?, PaymentId?, CreditCardAVResult?)>
+<!ELEMENT MultipayInsertDebitRequest (ClaimSet, AirlineData?, SequenceNumber, CollectNow)>
+<!ELEMENT MultipayInsertDebitResponse (Amount)>
+<!ELEMENT MultipayReduceAmountRequest (CustomerReference, Amount, SequenceNumber)>
+<!ELEMENT MultipayReduceAmountResponse (Amount)>
+<!ELEMENT MultipaySettleAccountRequest (CustomerReference, SequenceNumber)>
+<!ELEMENT MultipaySettleAccountResponse (Amount)>
+<!ELEMENT NameOfBank (#PCDATA)>
+<!ELEMENT NarrativeText (#PCDATA)>
+<!ELEMENT NewCustomer (#PCDATA)>
+<!ELEMENT OrderInformationText (#PCDATA)>
+<!ELEMENT OriginAirportCityCode (#PCDATA)>
+<!ELEMENT OutAddressOk (#PCDATA)>
+<!ELEMENT PassengerName (#PCDATA)>
+<!ELEMENT PaymentConnection (PaymentMethod, Scheme?, (CreditCard | SEPAAccount | Account)?)>
+<!ELEMENT PaymentId (#PCDATA)>
+<!ELEMENT PaymentMethod (#PCDATA)>
+<!ELEMENT PaymentNotifyRequest (PaymentStatus)>
+<!ELEMENT PaymentNotifyResponse EMPTY>
+<!ELEMENT PaymentSpecifiedStatusRequest (CustomerReference)>
+<!ELEMENT PaymentSpecifiedStatusResponse (PaymentStatus+)>
+<!ELEMENT PaymentStatus (Client, CustomerId, CustomerReference, (PaymentMethod | PaymentConnection), Amount, PaymentTransactionType, PaymentStatusResult)>
+<!ELEMENT PaymentStatusRequest EMPTY>
+<!ELEMENT PaymentStatusResponse (PaymentStatus*)>
+<!ELEMENT PaymentStatusResult (#PCDATA)>
+<!ELEMENT PaymentTransactionType (#PCDATA)>
+<!ELEMENT Person (FirstName?, MiddleName?, LastName, Salutation?, Title?, CompanyOrPerson, DateOfBirth?, Gender?, AddressAddition?)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT POBox (#PCDATA)>
+<!ELEMENT Protocol (#PCDATA)>
+<!ELEMENT PspAuthorizeRequest (PaymentConnection, CustomerReference, AdditionalCustomerReference?, SequenceNumber, Amount, NarrativeText?, CustomerData?, ShippingData?, TollData?, CreditCardAVMode?, S3DParameter?, RecurringPayment?, ClientParameters?)>
+<!ELEMENT PspAuthorizeResponse (Status, ReferenceId?, CreditCardAVResult?)>
+<!ELEMENT PspCaptureRequest (CustomerReference, SequenceNumber, ReferenceId, Amount, NarrativeText?, AirlineData?, SEPADebitParameter?)>
+<!ELEMENT PspCaptureResponse (Status)>
+<!ELEMENT PspCloseRequest (CustomerReference, SequenceNumber)>
+<!ELEMENT PspCloseResponse (Status)>
+<!ELEMENT PspRefundRequest (CustomerReference, SequenceNumber, Amount, NarrativeText?, SEPACreditParameter?)>
+<!ELEMENT PspRefundResponse (Status)>
+<!ELEMENT PspReturnValueRequest (CustomerReference, SequenceNumber?)>
+<!ELEMENT PspReturnValueResponse (Status, (errorNotification | (ReferenceStatus?, (ReferenceId? | SequenceNumber), CreditCardAVResult?)))>
+<!ELEMENT PspSalesRequest (PaymentConnection, CustomerReference, AdditionalCustomerReference?, SequenceNumber, Amount, NarrativeText?, CustomerData?, ShippingData?, AirlineData?, TollData?, CreditCardAVMode?, S3DParameter?, RecurringPayment?, SEPADebitParameter?, ClientParameters?)>
+<!ELEMENT PspSalesResponse (Status, CreditCardAVResult?)>
+<!ELEMENT PspCreditRequest (PaymentConnection, CustomerReference, AdditionalCustomerReference?, SequenceNumber, Amount, NarrativeText?, ClientParameters?)>
+<!ELEMENT PspCreditResponse (Status)>
+<!ELEMENT PspSplitAuthorizeRequest (CustomerReference, SequenceNumber, Amount)>
+<!ELEMENT PspSplitAuthorizeResponse (Status, ReferenceId?)>
+<!ELEMENT PspSplitCaptureRequest (CustomerReference, SequenceNumber, ReferenceId, Amount, NarrativeText?, SEPADebitParameter?)>
+<!ELEMENT PspSplitCaptureResponse (Status)>
+<!ELEMENT PspSplitCloseRequest (CustomerReference, SequenceNumber, ReferenceId)>
+<!ELEMENT PspSplitCloseResponse (Status)>
+<!ELEMENT ReferenceStatus %StatusType;>
+<!ELEMENT RedirectURL (#PCDATA)>
+<!ELEMENT ReferenceId (#PCDATA)>
+<!ELEMENT ReminderCause (#PCDATA)>
+<!ELEMENT ReminderLevel (#PCDATA)>
+<!ELEMENT RecurringPayment EMPTY>
+<!ELEMENT request (DebtorNotifyRequest | DebtorSpecifiedStatusRequest | DebtorStatusRequest | MultipayCheckBankRequest | MultipayCheckCreditCardRequest | MultipayInitGuiPaymentRequest | MultipayInitPaymentRequest | MultipayInsertDebitRequest | MultipayReduceAmountRequest | MultipaySettleAccountRequest | PaymentNotifyRequest | PaymentSpecifiedStatusRequest | PaymentStatusRequest | PspAuthorizeRequest | PspCaptureRequest | PspCloseRequest | PspCreditRequest | PspSalesRequest | PspSplitAuthorizeRequest | PspSplitCaptureRequest | PspSplitCloseRequest | PspRefundRequest | PspReturnValueRequest | S3DCheckEligibilityRequest | S3DValidateAuthenticationRequest | ConnectionTestRequest | RmsRequest)>
+<!ELEMENT response ((DebtorNotifyResponse | DebtorSpecifiedStatusResponse | DebtorStatusResponse | MultipayCheckBankResponse | MultipayCheckCreditCardResponse | MultipayInitGuiPaymentResponse | MultipayInitPaymentResponse | MultipayInsertDebitResponse | MultipayReduceAmountResponse | MultipaySettleAccountResponse | PaymentNotifyResponse | PaymentSpecifiedStatusResponse | PaymentStatusResponse | PspAuthorizeResponse | PspCaptureResponse | PspCloseResponse | PspCreditResponse | PspSalesResponse | PspSplitAuthorizeResponse | PspSplitCaptureResponse | PspSplitCloseResponse | PspRefundResponse | PspReturnValueResponse | S3DCheckEligibilityResponse | S3DValidateAuthenticationResponse | ConnectionTestResponse | errorNotification | RmsResponse), AdditionalResponseData?)>
+<!ELEMENT ResultStatus (#PCDATA)>
+<!ELEMENT retry (#PCDATA)>
+<!ELEMENT ReturnCode (#PCDATA)>
+<!ELEMENT RiskManagementService (RmsName, RmsCountry)>
+<!ELEMENT RmsAdditionalResult (#PCDATA)>
+<!ELEMENT RmsAddress (RmsStreet?, RmsStreetNumber?, RmsStreetAdditional?, RmsPostBox?, RmsZIPCode, RmsCity, RmsCountry, RmsZipCodeType?, RmsCompanyName?, ValidationStatus?, MatchStatus?, ResultStatus?, ReturnCode?)>
+<!ATTLIST RmsAddress
+	validated CDATA #IMPLIED
+>
+<!ELEMENT RmsArticle (#PCDATA)>
+<!ELEMENT RmsArticleName (#PCDATA)>
+<!ELEMENT RmsBillingCustomer (RmsCustomer)>
+<!ELEMENT RmsBirthday (#PCDATA)>
+<!ELEMENT RmsCity (#PCDATA)>
+<!ELEMENT RmsCompanyName (#PCDATA)>
+<!ELEMENT RmsCountry (#PCDATA)>
+<!ELEMENT RmsCustomer (RmsLastName, RmsFirstName?, RmsSalutation?, RmsTitle?, RmsSex?, RmsBirthday?, RmsEmail?, RmsReference?, RmsNewCustomer?, RmsAddress)>
+<!ATTLIST RmsCustomer
+	validated CDATA #IMPLIED
+>
+<!ELEMENT RmsEmail (#PCDATA)>
+<!ELEMENT RmsFirstName (#PCDATA)>
+<!ELEMENT RmsLastName (#PCDATA)>
+<!ELEMENT RmsName (#PCDATA)>
+<!ELEMENT RmsNewCustomer (#PCDATA)>
+<!ELEMENT RmsNumberPos (#PCDATA)>
+<!ELEMENT RmsOrder (RmsOrderNo, RmsOrderDate, RmsOrderAmount, RmsNumberPos, RmsOrderDetail+, RmsPayment)>
+<!ELEMENT RmsOrderAmount (#PCDATA)>
+<!ELEMENT RmsOrderDate (#PCDATA)>
+<!ELEMENT RmsOrderDetail (RmsArticle, RmsArticleName?, RmsProductType?, RmsProductCategory?, RmsQuantity, RmsValue, RmsValueSum)>
+<!ELEMENT RmsOrderNo (#PCDATA)>
+<!ELEMENT RmsPayment (#PCDATA)>
+<!ATTLIST RmsPayment
+	type CDATA #REQUIRED
+>
+<!ELEMENT RmsPostBox (#PCDATA)>
+<!ELEMENT RmsProductCategory (#PCDATA)>
+<!ELEMENT RmsProductType (#PCDATA)>
+<!ELEMENT RmsQuantity (#PCDATA)>
+<!ELEMENT RmsReference (#PCDATA)>
+<!ELEMENT RmsRequest (RiskManagementService, CustomerReference, RmsBillingCustomer, RmsOrder?)>
+<!ELEMENT RmsResponse (RmsBillingCustomer, RmsStatus, RmsAdditionalResult?)>
+<!ELEMENT RmsSalutation (#PCDATA)>
+<!ELEMENT RmsSex (#PCDATA)>
+<!ELEMENT RmsStatus (RmsStatusCode, RmsStatusText?)>
+<!ELEMENT RmsStatusCode (#PCDATA)>
+<!ELEMENT RmsStatusText (#PCDATA)>
+<!ELEMENT RmsStreet (#PCDATA)>
+<!ELEMENT RmsStreetAdditional (#PCDATA)>
+<!ELEMENT RmsStreetNumber (#PCDATA)>
+<!ELEMENT RmsTitle (#PCDATA)>
+<!ELEMENT RmsValue (#PCDATA)>
+<!ELEMENT RmsValueSum (#PCDATA)>
+<!ELEMENT RmsZIPCode (#PCDATA)>
+<!ELEMENT RmsZipCodeType (#PCDATA)>
+<!ELEMENT S3DAuthenticationValue (#PCDATA)>
+<!ELEMENT S3DCheckEligibilityRequest (CustomerReference, CreditCard, Amount)>
+<!ELEMENT S3DCheckEligibilityResponse (Status, (AuthServerURL, AuthRequestMessage)?)>
+<!ELEMENT S3DeCommerceIndicator (#PCDATA)>
+<!ELEMENT S3DParameter (S3DAcquirerExemptionIndicator?, S3DTransactionId?, S3DSecureVersionNumber?, S3DSecureDirectoryServerTransactionID?, S3DAuthenticationValue?, S3DeCommerceIndicator)>
+<!ELEMENT S3DAcquirerExemptionIndicator (#PCDATA)>
+<!ELEMENT S3DTransactionId (#PCDATA)>
+<!ELEMENT S3DSecureVersionNumber (#PCDATA)>
+<!ELEMENT S3DSecureDirectoryServerTransactionID (#PCDATA)>
+<!ELEMENT S3DValidateAuthenticationRequest (CustomerReference, AuthResponseMessage)>
+<!ELEMENT S3DValidateAuthenticationResponse (Status)>
+<!ELEMENT SalesChannel (#PCDATA)>
+<!ELEMENT Scheme (#PCDATA)>
+<!ELEMENT Salutation (#PCDATA)>
+<!ELEMENT ScoreRanking (#PCDATA)>
+<!ELEMENT ScoreRating (#PCDATA)>
+<!ELEMENT SEPAAccount (AccountHolder?, IBAN?, BIC?)>
+<!ELEMENT SEPACreditParameter (CreditDelay)>
+<!ELEMENT SEPADebitParameter (FirstSequenceType, SubsequentSequenceType?, MandateIdentification, MandateDateOfSignature, DebitDelay)>
+<!ELEMENT SequenceNumber (#PCDATA)>
+<!ELEMENT Server (#PCDATA)>
+<!ELEMENT ShippingData (Person, Address, ContactData?)>
+<!ELEMENT SocialSecurityNumber (#PCDATA)>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT Status %StatusType;>
+<!ELEMENT StatusCode (#PCDATA)>
+<!ELEMENT StatusText (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT SubsequentSequenceType (#PCDATA)>
+<!ELEMENT SuccessURL (#PCDATA)>
+<!ELEMENT ConnectionTestRequest (#PCDATA)>
+<!ELEMENT ConnectionTestResponse (#PCDATA)>
+<!ELEMENT TicketDocumentNumber (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT TollAmount (#PCDATA)>
+<!ELEMENT TollData (LicensePlateNumber, Axles, BookedRoute, TollAmount)>
+<!ELEMENT Transaction (CustomerReference, TransactionType, TransactionText, TransactionDate, DebitOrCredit, Amount, Lock?, BatchId?)>
+<!ELEMENT TransactionDate (#PCDATA)>
+<!ELEMENT TransactionText (#PCDATA)>
+<!ELEMENT TransactionType (#PCDATA)>
+<!ELEMENT TxData (header, (request | response))>
+<!ATTLIST TxData
+	version CDATA "2.0"
+	timeStamp CDATA #REQUIRED
+>
+<!ELEMENT ValidationStatus (#PCDATA)>
+<!ELEMENT VATAmount (#PCDATA)>
+<!ATTLIST VATAmount
+	Currency CDATA #IMPLIED
+>
+<!ELEMENT VATPercentage (#PCDATA)>
+<!ELEMENT WorkPhone (#PCDATA)>
+<!ELEMENT ZipCode (#PCDATA)>
